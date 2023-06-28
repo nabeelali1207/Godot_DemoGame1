@@ -1,0 +1,48 @@
+[gd_scene load_steps=4 format=3 uid="uid://bnen7ud3sran7"]
+
+[ext_resource type="Script" path="res://BG.gd" id="1_62khq"]
+[ext_resource type="Texture2D" uid="uid://yy4quamgoqk5" path="res://Imported/SunnyLand/SunnyLand Phaser Project/sunny-land/assets/environment/back.png" id="1_deukc"]
+[ext_resource type="Texture2D" uid="uid://coq7xge2ru3c6" path="res://Imported/SunnyLand/SunnyLand Phaser Project/sunny-land/assets/environment/middle.png" id="2_5j2su"]
+
+[node name="BG" type="ParallaxBackground"]
+script = ExtResource("1_62khq")
+
+[node name="Sky" type="ParallaxLayer" parent="."]
+motion_scale = Vector2(0.25, 1)
+motion_mirroring = Vector2(1152, 0)
+
+[node name="Back" type="Sprite2D" parent="Sky"]
+position = Vector2(576, 324)
+scale = Vector2(3, 2.7)
+texture = ExtResource("1_deukc")
+
+[node name="Hills" type="ParallaxLayer" parent="."]
+motion_mirroring = Vector2(1232, 0)
+
+[node name="Middle" type="Sprite2D" parent="Hills"]
+position = Vector2(88, 464)
+texture = ExtResource("2_5j2su")
+
+[node name="Middle2" type="Sprite2D" parent="Hills"]
+position = Vector2(264, 464)
+texture = ExtResource("2_5j2su")
+
+[node name="Middle3" type="Sprite2D" parent="Hills"]
+position = Vector2(440, 464)
+texture = ExtResource("2_5j2su")
+
+[node name="Middle4" type="Sprite2D" parent="Hills"]
+position = Vector2(616, 464)
+texture = ExtResource("2_5j2su")
+
+[node name="Middle5" type="Sprite2D" parent="Hills"]
+position = Vector2(792, 464)
+texture = ExtResource("2_5j2su")
+
+[node name="Middle6" type="Sprite2D" parent="Hills"]
+position = Vector2(968, 464)
+texture = ExtResource("2_5j2su")
+
+[node name="Middle7" type="Sprite2D" parent="Hills"]
+position = Vector2(1144, 464)
+texture = ExtResource("2_5j2su")
