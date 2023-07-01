@@ -10,8 +10,8 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 var player
 var chase = false
 var alive = true
-
-
+var contact = false
+var player_reference = null
 
 func _ready():
 	animation.play("Idle")
@@ -48,7 +48,10 @@ func _physics_process(delta):
 		animation.play("Fall")
 	elif alive == true:
 		animation.play("Idle")
-		
+	
+	if player_reference != null and player_reference.contact == true:
+		player_reference.health -= 1
+	
 	move_and_slide()
 
 
@@ -57,12 +60,11 @@ func _on_player_detection_body_entered(body):
 	if body.name == "Player":
 		chase = true
 
-
-
 func _on_player_detection_body_exited(body):
 	if body.name == "Player":
 		chase = false
 		velocity.x = 0
+
 
 
 func _on_player_death_body_entered(body):
@@ -72,4 +74,17 @@ func _on_player_death_body_entered(body):
 		get_node("AnimatedSprite2D").play("Death")
 		await get_node("AnimatedSprite2D").animation_finished
 		self.queue_free()
+
+
+
+func _on_player_collision_body_entered(body):
+	if body.name == "Player":
+		body.contact = true
+		player_reference = body
+		# Access and modify the player's health variable
 		
+
+func _on_player_collision_body_exited(body):
+	if body.name == "Player":
+		body.contact = false
+		player_reference = null

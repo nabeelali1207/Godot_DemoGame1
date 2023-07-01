@@ -240,7 +240,7 @@ sprite_frames = SubResource("SpriteFrames_atl14")
 animation = &"Jump"
 
 [node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(1.5, 1.5)
+zoom = Vector2(2, 2)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
