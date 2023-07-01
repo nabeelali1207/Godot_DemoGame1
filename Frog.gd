@@ -50,7 +50,8 @@ func _physics_process(delta):
 		animation.play("Idle")
 	
 	if player_reference != null and player_reference.contact == true:
-		player_reference.health -= 1
+#		player_reference.health -= 1
+		Game.playerHP -= .5
 	
 	move_and_slide()
 
@@ -73,6 +74,8 @@ func _on_player_death_body_entered(body):
 		alive = false
 		get_node("AnimatedSprite2D").play("Death")
 		await get_node("AnimatedSprite2D").animation_finished
+		Game.Gold += 1
+		Utils.SaveGame()
 		self.queue_free()
 
 

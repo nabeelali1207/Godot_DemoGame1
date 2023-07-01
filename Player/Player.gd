@@ -3,7 +3,7 @@ extends CharacterBody2D
 
 const SPEED = 200.0
 const JUMP_VELOCITY = -400.0
-var health = 10.0
+#var health = 10.0
 var contact = false
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
@@ -48,9 +48,10 @@ func _physics_process(delta):
 	
 	move_and_slide()
 	
-	if health <= 0:
+#	if health <= 0:
+	if Game.playerHP <= 0:
 		queue_free()
 		get_tree().change_scene_to_file("res://main.tscn")
 
-func modify_health(HealthIn):
-	health -= 1
+#func modify_health(HealthIn):
+#	health -= 1
