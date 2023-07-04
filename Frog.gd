@@ -84,8 +84,6 @@ func _on_player_collision_body_entered(body):
 	if body.name == "Player":
 		body.contact = true
 		player_reference = body
-		# Access and modify the player's health variable
-		
 
 func _on_player_collision_body_exited(body):
 	if body.name == "Player":
