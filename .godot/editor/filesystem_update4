@@ -1,8 +1,6 @@
-res://world.tscn
 res://main.tscn
+res://world.tscn
 res://BG.tscn
 res://Player/Player.tscn
 res://Frog.tscn
 res://Collectibles/Cherry.tscn
-res://Collectibles/Cherry.gd
-res://main.gd
